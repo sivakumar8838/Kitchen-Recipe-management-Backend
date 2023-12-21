@@ -4,13 +4,16 @@ const recipesRouter = express.Router();
 
 
 recipesRouter.get('/', async (req, res) => {
-  const { id, name } = req.body; 
+ 
    
  try {
-
+  const recipes = await Recipe.find()
+  
+  return res.json(recipes);
   
  } catch (error) {
   console.error(error)
+  return res.json({message: error.message});
  }
 });
 

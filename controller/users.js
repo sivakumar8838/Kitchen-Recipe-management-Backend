@@ -5,6 +5,12 @@ userRouter.post('/', async (req, res) => {
     const { username, name, password } = req.body;
 
     try {
+
+        const users = await User.findOne({ username: username});
+
+        if (users){
+         return res.json({message: 'User already exists'})
+        } 
        
         const passwordHash = await bcrypt.hash(password, 10);
 
