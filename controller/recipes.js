@@ -1,26 +1,17 @@
-// const express = require('express');
-// const Recipe = require('../models/Recipe'); 
-// const recipesRouter = express.Router();
+const express = require('express');
+const Recipe = require('../models/Recipe'); 
+const recipesRouter = express.Router();
 
 
-// recipesRouter.get('/', async (req, res) => {
-//   const { id, name } = req.query; 
- 
-//   try {
-//     let query = {};
-//     if (id) {
-//       query = { _id: id }; 
-//     } else if (name) {
-//       query = { name: { $regex: new RegExp(name, 'i') } };
-//     }
+recipesRouter.get('/', async (req, res) => {
+  const { id, name } = req.body; 
+   
+ try {
 
-//     const recipes = await Recipe.find(query);
-//     console.log(recipes)
-//     res.json({ recipes });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
+  
+ } catch (error) {
+  console.error(error)
+ }
+});
 
-// module.exports = recipesRouter;
+module.exports = recipesRouter;

@@ -24,17 +24,17 @@ userRouter.post('/', async (req, res) => {
     }
 });
 
-userRouter.get('/', async (req, res) => {
-    const{username, password} = req.body;
+// userRouter.get('/', async (req, res) => {
+//     const{username, password} = req.body;
 
-      try {
-        const user = await User.findOne({ username, password});
-         res.json(user);
-      } catch (err) {
-        console.error('Error in user registration:', err.message);
-        res.status(500).json({ error: 'Internal Server Error' });
-      }
-})
+//       try {
+//         const user = await User.findOne({ username, password});
+//          res.json(user);
+//       } catch (err) {
+//         console.error('Error in user registration:', err.message);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//       }
+// })
 
 
 module.exports=userRouter;
