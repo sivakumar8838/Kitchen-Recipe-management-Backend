@@ -6,6 +6,7 @@ const usersRouter = require('./controller/users')
 const loginRouter = require('./controller/login');
 const passwordRouter = require('./controller/passwordrese');
 const recipesRouter= require('./controller/recipes');
+const UserRecipeRouter = require("./controller/UserRecipecontroller");
 
 const app = express();
 app.use(cors());
@@ -15,6 +16,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/passwordreset', passwordRouter);
 app.use('/api/login', loginRouter);
 app.use('/api/Recipe', recipesRouter);
+app.use('/api/userRecipe',UserRecipeRouter)
 
 mongoose.set('strictQuery', false)
 
